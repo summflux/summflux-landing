@@ -1,0 +1,936 @@
+@media (max-width: 980px) {
+  .nav {
+    height: 76px;
+  }
+
+  .logo-link img {
+    height: 30px;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 91;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    padding: 120px 28px 40px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 18px;
+    background: rgba(251, 251, 255, 0.98);
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+    z-index: 90;
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  .nav-menu a {
+    font-size: 1.2rem;
+  }
+
+  .hero-grid,
+  .demo-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .product-frame {
+    transform: none;
+  }
+
+  .problem-grid,
+  .features-grid,
+  .pricing-grid,
+  .security-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .steps-grid,
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tutorial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: min(100% - 32px, var(--container));
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .hero {
+    padding-top: 56px;
+  }
+
+  .hero-proof,
+  .problem-grid,
+  .features-grid,
+  .steps-grid,
+  .pricing-grid,
+  .security-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .btn,
+  .contact-form .btn {
+    width: 100%;
+  }
+
+  .demo-carousel {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 10px;
+    border-radius: 22px;
+  }
+
+  .carousel-slide img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: left top;
+  }
+
+  .contact-card,
+  .legal-content {
+    padding: 26px;
+    border-radius: 24px;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form .full {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+
+/* ===== Correções finais de responsividade, logos, menu e imagens ===== */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.header {
+  min-height: 92px;
+}
+
+.logo-link img {
+  height: 54px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-menu .btn {
+  white-space: nowrap;
+}
+
+.eyebrow {
+  font-size: 1.1rem;
+  padding: 15px 23px;
+  margin-bottom: 1.2rem;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 0.9fr) minmax(480px, 1.1fr);
+}
+
+.product-frame {
+  width: min(100%, 760px);
+  margin-left: auto;
+  padding: 20px;
+}
+
+.product-frame img {
+  width: 100%;
+  min-height: 330px;
+  object-fit: cover;
+  object-position: left top;
+}
+
+.demo-carousel {
+  width: 120%;
+}
+
+.carousel-slide img {
+  min-height: 420px;
+}
+
+.social-link svg {
+  display: block;
+  width: 21px;
+  height: 21px;
+}
+
+.feature-card,
+.step-card,
+.security-card,
+.plan-card {
+  text-align: left;
+}
+
+@media (max-width: 1180px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-frame {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 980px) {
+  .header {
+    min-height: 78px;
+  }
+
+  .logo-link img {
+    height: 46px;
+  }
+
+  .nav {
+    height: 78px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100svh;
+    padding: 118px 28px 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 22px;
+    background: rgba(251, 251, 255, 0.98);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: none;
+    clip-path: inset(0 0 0 100%);
+    transition: clip-path 0.28s ease, opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 90;
+  }
+
+  .nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    clip-path: inset(0);
+  }
+
+  .nav-menu a {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    font-size: 1.34rem;
+    line-height: 1.2;
+  }
+
+  .nav-menu .btn {
+    min-height: 58px;
+    overflow: hidden;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 91;
+  }
+
+  .hero {
+    padding-top: 46px;
+  }
+
+  .product-frame {
+    width: 100%;
+    max-width: 780px;
+  }
+
+  .product-frame img {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 680px) {
+  .logo-link img {
+    height: 42px;
+  }
+
+  .eyebrow {
+    font-size: 0.95rem;
+    padding: 9px 14px;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.35rem, 14vw, 4.3rem);
+  }
+
+  .product-frame {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 10px;
+    border-radius: 24px;
+  }
+
+  .product-frame img {
+    min-height: 310px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: left top;
+    border-radius: 18px;
+  }
+
+  .demo-carousel {
+    width: calc(100vw - 24px);
+    margin-left: calc(50% - 50vw + 12px);
+    margin-right: 0;
+    padding: 10px;
+  }
+
+  .carousel-window {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carousel-slide {
+    scroll-snap-align: start;
+  }
+
+  .carousel-slide img {
+    min-width: 720px;
+    min-height: 405px;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: left top;
+    background: #0b1020;
+  }
+
+  .demo-layout {
+    gap: 34px;
+  }
+
+  .nav-menu {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    width: min(100% - 28px, var(--container));
+  }
+
+  .logo-link img {
+    height: 38px;
+  }
+
+  .nav-menu a {
+    max-width: 100%;
+    font-size: 1.22rem;
+  }
+
+  .nav-menu .btn {
+    width: 100%;
+  }
+}
+
+/* ===== Ajustes solicitados: navbar fixo, logo maior, imagens maiores e social icons ===== */
+body {
+  padding-top: 92px;
+}
+
+.header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: 92px;
+  z-index: 999;
+}
+
+.nav {
+  height: 92px;
+}
+
+.logo-link {
+  width: 170px;
+  min-width: 170px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-link img {
+  width: 155px !important;
+  height: auto !important;
+  max-height: 54px;
+  object-fit: contain;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(430px, 0.82fr) minmax(620px, 1.18fr);
+  gap: clamp(42px, 5vw, 84px);
+}
+
+.product-frame {
+  width: min(100%, 900px) !important;
+  max-width: 900px !important;
+}
+
+.product-frame img {
+  min-height: 430px !important;
+}
+
+.demo-layout {
+  grid-template-columns: minmax(360px, 0.7fr) minmax(700px, 1.3fr);
+  gap: clamp(42px, 5vw, 82px);
+}
+
+.demo-carousel {
+  max-width: 920px;
+  margin-left: auto;
+}
+
+.carousel-slide img {
+  min-height: 40rem !important;
+}
+
+.socials {
+  align-items: center;
+}
+
+@media (max-width: 1720px) { .demo-carousel {width: 100%} }
+
+.social-link,
+.social-link:visited {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  line-height: 1;
+}
+
+.social-link svg {
+  display: block !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 !important;
+  flex: 0 0 auto;
+}
+
+.btn-plan {
+  width: 100%;
+  margin-top: 22px;
+  border-color: var(--line);
+  background: var(--dark);
+  color: #fff;
+}
+
+.plan-card .btn-plan:hover {
+  box-shadow: 0 16px 40px rgba(9, 13, 24, 0.18);
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --container: 1360px;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(480px, 0.78fr) minmax(720px, 1.22fr);
+  }
+
+  .product-frame {
+    width: min(150%, 980px) !important;
+    max-width: 980px !important;
+  }
+
+  .product-frame img {
+    min-height: 470px !important;
+  }
+
+  .demo-carousel {
+    max-width: 1040px;
+  }
+
+  .carousel-slide img {
+    min-height: 560px !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .hero-grid,
+  .demo-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .product-frame,
+  .demo-carousel {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 980px) {
+  body {
+    padding-top: 78px;
+  }
+
+  .header {
+    min-height: 78px;
+  }
+
+  .nav {
+    height: 78px;
+  }
+
+  .logo-link {
+    width: 150px;
+    min-width: 150px;
+    height: 48px;
+  }
+
+  .logo-link img {
+    width: 138px !important;
+    max-height: 48px;
+  }
+
+  .nav-menu {
+    top: 78px !important;
+    height: calc(100svh - 78px) !important;
+    padding-top: 54px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  body {
+    padding-top: 76px;
+  }
+
+  .header {
+    min-height: 76px;
+  }
+
+  .nav {
+    height: 76px;
+  }
+
+  .logo-link {
+    width: 128px;
+    min-width: 128px;
+  }
+
+  .logo-link img {
+    width: 118px !important;
+    max-height: 42px;
+  }
+
+  .product-frame img {
+    min-height: 360px !important;
+  }
+
+  .carousel-slide img {
+    min-height: 380px !important;
+  }
+
+  .socials {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* ===== Overrides finais: correção da logo, mobile do CRM e lightbox ===== */
+.logo-link,
+.header .logo-link {
+  display: flex !important;
+  align-items: center !important;
+  flex: 0 0 auto !important;
+  width: 190px !important;
+  min-width: 190px !important;
+  height: 64px !important;
+  overflow: visible !important;
+}
+
+.logo-link img,
+.header .logo-link img {
+  display: block !important;
+  width: 250px !important;
+  max-width: none !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+
+.header {
+  position: fixed !important;
+}
+
+.demo-layout {
+  overflow: visible;
+}
+
+.demo-carousel {
+  width: 100%;
+}
+
+.carousel-window {
+  overflow: hidden;
+}
+
+@media (min-width: 1440px) {
+  .product-frame {
+    width: min(150%, 980px) !important;
+    max-width: 980px !important;
+  }
+
+  .demo-carousel {
+    max-width: 1040px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .demo-layout {
+    grid-template-columns: 1fr !important;
+    overflow: hidden;
+  }
+
+  .demo-carousel {
+    width: 100% !important;
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 980px) {
+  .logo-link,
+  .header .logo-link {
+    width: 170px !important;
+    min-width: 170px !important;
+    height: 56px !important;
+  }
+
+  .logo-link img,
+  .header .logo-link img {
+    width: 158px !important;
+  }
+
+  .nav-menu {
+    left: 0 !important;
+    right: 0 !important;
+    overflow-x: hidden;
+  }
+
+  .demo-section {
+    overflow: hidden;
+  }
+
+  .demo-layout {
+    width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: min(100% - 32px, var(--container));
+  }
+
+  .logo-link,
+  .header .logo-link {
+    width: 150px !important;
+    min-width: 150px !important;
+    height: 54px !important;
+  }
+
+  .logo-link img,
+  .header .logo-link img {
+    width: 140px !important;
+  }
+
+  .demo-section .container {
+    width: min(100% - 28px, var(--container));
+  }
+
+  .demo-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 30px;
+  }
+
+  .demo-section h2,
+  .demo-section .lead {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .demo-point {
+    overflow-wrap: anywhere;
+  }
+
+  .demo-carousel {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 10px;
+  }
+
+  .carousel-window {
+    overflow: hidden !important;
+  }
+
+  .carousel-track {
+    width: 100%;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .carousel-slide img {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: clamp(270px, 80vw, 390px) !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: left top;
+  }
+
+  .image-hint {
+    font-size: 0.82rem;
+  }
+
+  .image-lightbox {
+    padding: 12px;
+  }
+
+  .image-lightbox-panel {
+    width: 100%;
+    height: 84vh;
+    border-radius: 20px;
+  }
+
+  .image-lightbox-actions {
+    top: 10px;
+    right: 10px;
+  }
+
+  .image-lightbox-actions button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .image-lightbox-caption {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    max-width: none;
+    border-radius: 16px;
+    font-size: 0.78rem;
+  }
+
+  .tutorial-video-card {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .logo-link,
+  .header .logo-link {
+    width: 136px !important;
+    min-width: 136px !important;
+  }
+
+  .logo-link img,
+  .header .logo-link img {
+    width: 128px !important;
+  }
+}
+
+
+/* ===== PATCH FINAL — remover segundo scroll sem mexer no layout =====
+   Causa provável:
+   - Regras globais com overflow-x em body/main transformaram mais de um elemento
+     em área rolável.
+   - Alguns componentes tinham larguras maiores que o viewport em certos breakpoints.
+
+   Estratégia:
+   - Deixar APENAS o documento (html) cuidar do scroll vertical.
+   - Impedir overflow horizontal na raiz.
+   - Tirar qualquer scroll interno acidental de main/body.
+   - Limitar hero/carousel ao viewport sem reduzir o tamanho em desktop.
+*/
+
+html {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  position: relative;
+}
+
+body.no-scroll {
+  overflow: hidden !important;
+}
+
+main {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+.header {
+  max-width: 100vw !important;
+  overflow: visible !important;
+}
+
+.hero,
+.section,
+.section-soft,
+.proof-section,
+.demo-section,
+.pricing-section,
+.logos-strip,
+.footer,
+.legal-hero,
+.tutorial-video-section {
+  max-width: 100vw !important;
+  overflow-x: clip !important;
+}
+
+.container,
+.nav,
+.hero-grid,
+.proof-layout,
+.features-grid,
+.demo-layout,
+.steps-grid,
+security-grid,
+.pricing-grid,
+.footer-grid {
+  max-width: 100% !important;
+}
+
+/* Mantém a imagem grande no desktop, mas impede que ela crie overflow horizontal. */
+.product-frame,
+.demo-carousel,
+.tutorial-video-card,
+.contact-card,
+.legal-content {
+  max-width: 100% !important;
+}
+
+/* Remove largura maior que o viewport que estava criando área rolável lateral. */
+@media (min-width: 1440px) {
+  .product-frame {
+    width: min(100%, 980px) !important;
+    max-width: 980px !important;
+  }
+
+  .demo-carousel {
+    width: 100% !important;
+    max-width: 1040px !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .hero-grid,
+  .demo-layout {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .product-frame,
+  .demo-carousel {
+    width: 100% !important;
+    max-width: 960px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero,
+  .demo-section {
+    overflow-x: clip !important;
+  }
+
+  .demo-carousel {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .carousel-window {
+    overflow: hidden !important;
+    max-width: 100% !important;
+  }
+
+  .carousel-track {
+    max-width: 100% !important;
+  }
+
+  .carousel-slide {
+    min-width: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .carousel-slide img {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
