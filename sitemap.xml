@@ -2,13 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://summflux.com.br/</loc>
+    <loc>https://summflux.com</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://summflux.com.br/tutorial-instalacao.html</loc>
-    <priority>0.8</priority>
+    <loc>https://summflux.com/tutorial-instalacao.html</loc>
+    <priority>0.6</priority>
   </url>
+
+  <url>
+    <loc>https://summflux.com/termos.html</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://summflux.com/privacidade.html</loc>
+  <priority>0.2</priority>
 
 </urlset>
