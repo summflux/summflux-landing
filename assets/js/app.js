@@ -24,7 +24,6 @@ if (menuToggle && navMenu) {
 
   menuToggle.addEventListener('click', () => {
     const isOpen = navMenu.classList.contains('active');
-
     if (isOpen) {
       closeMobileMenu();
     } else {
@@ -140,7 +139,7 @@ if (leadForm) {
 
     if (message) {
       message.classList.add('show');
-      message.textContent = 'Enviando formulário...';
+      message.textContent = 'Enviando formulario...';
     }
 
     if (submitButton) {
@@ -164,11 +163,11 @@ if (leadForm) {
       leadForm.reset();
 
       if (message) {
-        message.textContent = 'Formulário enviado com sucesso. Em breve entraremos em contato.';
+        message.textContent = 'Formulario enviado com sucesso. Em breve entraremos em contato.';
       }
     } catch (error) {
       if (message) {
-        message.textContent = 'Não foi possível enviar agora. Tente novamente ou envie mensagem para contato@summflux.com.';
+        message.textContent = 'Nao foi possivel enviar agora. Tente novamente ou envie mensagem para support@summflux.com.br.';
       }
     } finally {
       if (submitButton) {
@@ -179,8 +178,6 @@ if (leadForm) {
   });
 }
 
-
-/* ===== Lightbox com zoom para screenshots ===== */
 const zoomableImages = document.querySelectorAll('[data-zoomable-image]');
 
 if (zoomableImages.length) {
@@ -188,7 +185,7 @@ if (zoomableImages.length) {
   lightbox.className = 'image-lightbox';
   lightbox.setAttribute('role', 'dialog');
   lightbox.setAttribute('aria-modal', 'true');
-  lightbox.setAttribute('aria-label', 'Visualização ampliada da imagem');
+  lightbox.setAttribute('aria-label', 'Visualizacao ampliada da imagem');
 
   lightbox.innerHTML = `
     <div class="image-lightbox-panel">
@@ -196,12 +193,12 @@ if (zoomableImages.length) {
         <img class="image-lightbox-img" alt="">
       </div>
       <div class="image-lightbox-actions">
-        <button type="button" data-zoom-out aria-label="Diminuir zoom">−</button>
+        <button type="button" data-zoom-out aria-label="Diminuir zoom">-</button>
         <button type="button" data-zoom-reset aria-label="Restaurar zoom">=</button>
         <button type="button" data-zoom-in aria-label="Aumentar zoom">+</button>
-        <button type="button" data-lightbox-close aria-label="Fechar">×</button>
+        <button type="button" data-lightbox-close aria-label="Fechar">x</button>
       </div>
-      <p class="image-lightbox-caption">Use +/− para zoom, arraste a imagem ampliada e pressione ESC para fechar.</p>
+      <p class="image-lightbox-caption">Use + / - para zoom, arraste a imagem ampliada e pressione ESC para fechar.</p>
     </div>
   `;
 
@@ -265,7 +262,7 @@ if (zoomableImages.length) {
   zoomableImages.forEach((image) => {
     image.setAttribute('tabindex', '0');
     image.setAttribute('role', 'button');
-    image.setAttribute('aria-label', `${image.alt || 'Imagem'} — clique para ampliar`);
+    image.setAttribute('aria-label', `${image.alt || 'Imagem'} - clique para ampliar`);
 
     image.addEventListener('click', () => openLightbox(image));
 
@@ -357,7 +354,6 @@ if (zoomableImages.length) {
   }, { passive: true });
 }
 
-/* ===== Animações de entrada no scroll ===== */
 (function initScrollReveal() {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -383,6 +379,12 @@ if (zoomableImages.length) {
     '.section h2',
     '.section > .container > .lead',
     '.feature-card',
+    '.ary-copy > .eyebrow',
+    '.ary-copy h2',
+    '.ary-copy .lead',
+    '.ary-highlight',
+    '.ary-actions',
+    '.ary-frame',
     '.proof-metric-card',
     '.demo-section .eyebrow',
     '.demo-section h2',
@@ -404,7 +406,6 @@ if (zoomableImages.length) {
   ];
 
   const revealItems = Array.from(document.querySelectorAll(revealSelectors.join(',')));
-
   if (!revealItems.length) return;
 
   revealItems.forEach((element, index) => {

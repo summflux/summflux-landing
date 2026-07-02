@@ -283,12 +283,14 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 44px;
+  align-items: stretch;
 }
 
 .plan-card {
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
   padding: 30px;
   border-radius: 30px;
   background: #fff;
@@ -319,6 +321,9 @@
   line-height: 1;
   font-weight: 950;
   letter-spacing: -0.05em;
+  min-height: 52px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .price span {
@@ -333,6 +338,7 @@
   margin: 0 0 26px;
   display: grid;
   gap: 12px;
+  flex: 1 1 auto;
 }
 
 .plan-card li {
@@ -355,10 +361,28 @@
 
 .ideal {
   margin-top: auto;
+  min-height: 78px;
   padding-top: 18px;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-weight: 700;
+}
+
+.plan-card h3 {
+  min-height: 40px;
+}
+
+.plan-card > p {
+  min-height: 92px;
+}
+
+.plan-meta {
+  min-height: 40px;
+  align-items: center;
+}
+
+.btn-plan {
+  margin-top: 18px;
 }
 
 .faq-list {
@@ -1128,18 +1152,96 @@ main {
   color: #ffffff;
 }
 
-@media (max-width: 980px) {
-  .tutorial-video-frame video {
-    min-height: 260px;
-  }
+/* ===== Ary AI + posicionamento de planos ===== */
+.ary-section {
+  background:
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.16), transparent 30%),
+    linear-gradient(180deg, #0b1020 0%, #111827 100%);
+  color: #ffffff;
 }
 
-@media (max-width: 680px) {
-  .tutorial-video-frame video {
-    min-height: 210px;
-  }
-
-  .legal-content {
-    margin-bottom: 56px;
-  }
+.ary-section .lead,
+.ary-section p:not(.image-hint) {
+  color: #c7d2fe;
 }
+
+.ary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(28px, 4vw, 52px);
+  align-items: center;
+}
+
+.ary-copy h2 {
+  max-width: 12ch;
+}
+
+.ary-highlights {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.ary-highlight {
+  padding: 18px 20px;
+  border-radius: 22px;
+  border: 1px solid rgba(167, 139, 250, 0.24);
+  background: rgba(15, 23, 42, 0.54);
+}
+
+.ary-highlight strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.ary-highlight span {
+  color: #c7d2fe;
+  font-weight: 700;
+}
+
+.ary-actions {
+  margin-top: 30px;
+}
+
+.ary-frame {
+  padding: 16px;
+  border-radius: 30px;
+  background: rgba(9, 13, 24, 0.82);
+  border: 1px solid rgba(167, 139, 250, 0.24);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+}
+
+.ary-frame img {
+  width: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  object-position: top left;
+  border-radius: 20px;
+}
+
+.plan-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 10px;
+}
+
+.plan-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(124, 58, 237, 0.18);
+  background: #f7f4ff;
+  color: var(--primary-2);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.plan-card .price {
+  margin-top: 18px;
+}
+
+

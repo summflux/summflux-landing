@@ -1,265 +1,149 @@
 # SummFlux Landing Page
 
-Landing page oficial da **SummFlux**, uma plataforma de CRM inteligente desenvolvida para empresas que utilizam o WhatsApp Web como principal canal de vendas e atendimento.
+Landing page institucional da SummFlux, posicionada para apresentar a plataforma como uma IA para operacoes comerciais que analisam conversas, preenchem leads automaticamente e reduzem trabalho manual no WhatsApp e no Gmail.
 
-A página foi criada com foco em conversão, apresentação do produto, geração de leads e demonstração das funcionalidades da plataforma.
+## Objetivo
 
----
+Esta landing existe para:
 
-## Sobre a SummFlux
+- apresentar a proposta comercial da SummFlux com clareza;
+- explicar como a Ary AI economiza tempo da equipe;
+- destacar a diferenca real entre Starter, Pro e Business;
+- gerar demanda para teste e cadastro;
+- sustentar a operacao com paginas legais e tutorial.
 
-A SummFlux transforma conversas do WhatsApp em oportunidades de venda organizadas dentro de um CRM moderno.
-
-Através de uma extensão para Google Chrome e inteligência artificial, a plataforma identifica informações relevantes das conversas e organiza automaticamente os dados comerciais para facilitar o acompanhamento dos leads.
-
-### Principais funcionalidades
-
-* CRM integrado
-* Pipeline de vendas
-* Qualificação automática de leads
-* Resumos inteligentes de conversas
-* Identificação de objeções
-* Próxima ação recomendada
-* Central de oportunidades
-* Follow-up inteligente
-* Gestão de tarefas e lembretes
-* Insights comerciais
-* Controle de receita
-* Gestão de múltiplos usuários
-* Integração com WhatsApp Web
-
----
-
-## Objetivo da Landing Page
-
-A landing page foi desenvolvida para:
-
-* Apresentar a plataforma SummFlux
-* Explicar o funcionamento do sistema
-* Demonstrar os benefícios do CRM
-* Exibir planos e preços
-* Capturar potenciais clientes
-* Disponibilizar informações legais
-* Fornecer tutorial de instalação da extensão
-
----
-
-## Estrutura do Projeto
+## Estrutura
 
 ```text
 summflux-landing-page/
-│
-├── index.html
-├── privacidade.html
-├── termos.html
-├── tutorial-instalacao.html
-│
-├── assets/
-│   ├── css/
-│   │   ├── global.css
-│   │   ├── styles.css
-│   │   └── media_querys.css
-│   │
-│   ├── js/
-│   │   └── app.js
-│   │
-│   ├── images/
-│   ├── icons/
-│   └── videos/
-│
-└── README.md
+|-- index.html
+|-- privacidade.html
+|-- termos.html
+|-- tutorial-instalacao.html
+|-- sitemap.xml
+|-- README.MD
+`-- assets/
+    |-- css/
+    |   |-- global.css
+    |   |-- styles.css
+    |   `-- media_querys.css
+    |-- js/
+    |   `-- app.js
+    |-- icons/
+    |   `-- st-logo.png
+    |-- images/
+    |   |-- dashboard-ary.png
+    |   |-- dashboard-atencao.png
+    |   |-- dashboard-configuracoes.png
+    |   |-- dashboard-insights.png
+    |   |-- dashboard-lead-modal.png
+    |   |-- dashboard-pipeline.png
+    |   |-- dashboard-receita.png
+    |   |-- st-logo.png
+    |   |-- summflux-black.png
+    |   `-- summflux-white.png
+    `-- video/
+        `-- tutorial-instalacao-summflux.mp4
 ```
 
----
+## Paginas
 
-## Tecnologias Utilizadas
+### `index.html`
 
-### Frontend
+Pagina principal com:
 
-* HTML5
-* CSS3
-* JavaScript Vanilla
+- hero de posicionamento;
+- mensagem AI-first com foco em automacao comercial;
+- prova de valor do produto;
+- secao da Ary AI;
+- demonstracao visual do CRM;
+- explicacao do fluxo operacional;
+- planos;
+- FAQ;
+- formulario de contato.
 
-### Recursos
+### `tutorial-instalacao.html`
 
-* Design responsivo
-* Menu mobile
-* Animações on-scroll
-* Carousel automático
-* Ampliação de imagens
-* Formulário integrado ao Formspree
-* SEO básico
-* Compatibilidade com dispositivos móveis
+Pagina de apoio com instrucoes para instalacao da extensao no Chrome e uso em WhatsApp Web e Gmail.
 
----
+### `privacidade.html`
 
-## Páginas Disponíveis
+Politica de Privacidade com contexto da operacao SaaS, IA, extensao e tratamento de dados comerciais.
 
-### Página Inicial
+### `termos.html`
 
-Arquivo:
+Termos de Uso com regras de planos, limites, responsabilidades e uso da plataforma.
+
+## Stack
+
+- HTML5
+- CSS3
+- JavaScript Vanilla
+
+## Recursos implementados
+
+- menu responsivo;
+- carrossel de screenshots;
+- lightbox com zoom;
+- FAQ expansivel;
+- animacoes de entrada no scroll;
+- formulario integrado ao Formspree;
+- estrutura estatica pronta para deploy.
+
+## Diretriz de posicionamento
+
+Toda atualizacao desta landing deve preservar estes pilares:
+
+- SummFlux e IA para operacao comercial, nao apenas CRM;
+- automacao e economia de tempo precisam aparecer antes de "gestao";
+- WhatsApp Web e Gmail como canais de entrada;
+- CRM nativo da SummFlux e integracoes externas;
+- planos com logica de upgrade por canal, equipe, automacao e integracao;
+- linguagem B2B clara, sofisticada e sem exagero visual.
+
+## Estrutura de planos atual
+
+- Starter: 300 analises por mes;
+- Pro: 1.150 analises por mes;
+- Business: 5.000 analises por mes.
+
+## CTA principal
+
+Os botoes de contratacao dos planos devem apontar para:
 
 ```text
-index.html
+https://app.summflux.com/signup
 ```
 
-Contém:
+## Cuidados de conteudo
 
-* Hero principal
-* Demonstração do produto
-* Como funciona
-* Recursos
-* CRM em funcionamento
-* Planos
-* FAQ
-* Formulário de contato
-* Footer institucional
+- evitar dados reais identificaveis nas imagens;
+- revisar landing, tutorial e paginas legais sempre que o produto mudar;
+- manter consistencia entre copy comercial, planos e funcionalidades reais ja disponiveis.
 
----
+## Execucao local
 
-### Política de Privacidade
+Como o projeto e estatico, voce pode:
 
-Arquivo:
-
-```text
-privacidade.html
-```
-
-Explica:
-
-* Coleta de dados
-* Tratamento de informações
-* Uso da inteligência artificial
-* Compartilhamento de dados
-* Segurança
-* Direitos dos titulares
-
----
-
-### Termos de Uso
-
-Arquivo:
-
-```text
-termos.html
-```
-
-Define:
-
-* Regras de utilização
-* Responsabilidades
-* Limitações
-* Planos
-* Pagamentos
-* Suspensão de acesso
-
----
-
-### Tutorial de Instalação
-
-Arquivo:
-
-```text
-tutorial-instalacao.html
-```
-
-Contém:
-
-* Passo a passo da instalação
-* Demonstração da extensão
-* Orientações para primeiros acessos
-
----
-
-## Executando Localmente
-
-Basta abrir:
-
-```text
-index.html
-```
-
-ou utilizar uma extensão como:
-
-```text
-Live Server
-```
-
-no Visual Studio Code.
-
----
+1. abrir o `index.html` direto no navegador; ou
+2. usar Live Server no VS Code.
 
 ## Deploy
 
-### Vercel
+Deploy publicado na Vercel.
 
-1. Faça push do projeto para o GitHub.
-2. Acesse a Vercel.
-3. Clique em:
+Fluxo recomendado:
 
-```text
-Add New Project
-```
+1. versionar o projeto no repositorio;
+2. conectar o repositorio na Vercel;
+3. publicar sem build customizado.
 
-4. Importe o repositório.
-5. Clique em:
+## Contato
 
-```text
-Deploy
-```
+- Site: [https://www.summflux.com](https://www.summflux.com)
+- App: [https://app.summflux.com](https://app.summflux.com)
+- API: [https://api.summflux.com](https://api.summflux.com)
 
-Nenhuma configuração adicional é necessária.
+## Licenca
 
----
-
-## Formulário de Contato
-
-A landing page utiliza:
-
-```text
-Formspree
-```
-
----
-
-## Redes Sociais
-
-Instagram:
-
-```text
-https://www.instagram.com/summflux/
-```
-
-LinkedIn:
-
-```text
-https://linkedin.com/company/summflux
-```
-
-YouTube:
-
-```text
-https://www.youtube.com/@SummFlux
-```
-
----
-
-## Suporte
-
-E-mail:
-
-```text
-support.summflux@gmail.com
-```
-
----
-
-## Licença
-
-Todos os direitos reservados.
-
-O conteúdo, identidade visual, marca, código e materiais da SummFlux não podem ser reproduzidos, distribuídos ou utilizados sem autorização.
-
----
-
-© 2026 SummFlux
+Uso interno da SummFlux. Todos os direitos reservados.

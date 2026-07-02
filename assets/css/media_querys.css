@@ -934,3 +934,50 @@ security-grid,
   }
 }
 
+@media (max-width: 980px) {
+  .tutorial-video-frame video {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 680px) {
+  .tutorial-video-frame video {
+    min-height: 210px;
+  }
+
+  .legal-content {
+    margin-bottom: 56px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .ary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ary-copy h2 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .ary-frame {
+    padding: 10px;
+    border-radius: 22px;
+  }
+
+  .ary-frame img {
+    min-height: 240px;
+    border-radius: 16px;
+  }
+
+  .plan-meta {
+    gap: 8px;
+  }
+
+  .plan-tag {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
