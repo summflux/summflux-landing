@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -15,18 +15,20 @@
   <link rel="stylesheet" href="assets/css/media_querys.css">
 </head>
 <body>
-  <header class="header">
-    <div class="container nav">
-      <a class="logo-link" href="/" aria-label="SummFlux">
-        <img src="assets/images/summflux-black.png" alt="SummFlux">
+  <header class="site-header" data-header>
+    <div class="container nav-shell">
+      <a class="brand" href="/" aria-label="SummFlux — início">
+        <img src="assets/images/summflux-black.png" alt="SummFlux" width="178" height="42">
       </a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" data-menu-toggle><span></span><span></span><span></span></button>
-      <nav class="nav-menu" data-nav-menu>
-        <a href="/#produto">Produto</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
+      <nav class="nav-menu" aria-label="Navegação principal" data-nav-menu>
         <a href="/#ary-ai">Ary AI</a>
         <a href="/#como-funciona">Como funciona</a>
-        <a href="tutorial-instalacao.html">Instala&ccedil;&atilde;o</a>
-        <a class="btn btn-primary" href="https://app.summflux.com/signup">Come&ccedil;ar agora</a>
+        <a href="/#integracoes">Integrações</a>
+        <a href="/#seguranca">Segurança</a>
+        <a href="/#planos">Planos</a>
+        <a class="nav-login" href="https://app.summflux.com/">Entrar</a>
+        <a class="btn btn-primary nav-cta" href="/#demonstracao">Ver a Ary em ação</a>
       </nav>
     </div>
   </header>
@@ -41,31 +43,31 @@
     </section>
 
     <article class="legal-content">
-      <p><strong>&Uacute;ltima atualiza&ccedil;&atilde;o:</strong> 2 de julho de 2026.</p>
+      <p><strong>&Uacute;ltima atualiza&ccedil;&atilde;o:</strong> 13 de julho de 2026.</p>
       <p>Esta Pol&iacute;tica de Privacidade descreve como a SummFlux coleta, utiliza, armazena e protege informa&ccedil;&otilde;es relacionadas ao uso da plataforma. Ao utilizar nossos servi&ccedil;os, voc&ecirc; concorda com as pr&aacute;ticas descritas neste documento.</p>
 
       <h2>1. Quem somos</h2>
-      <p>A SummFlux &eacute; uma plataforma SaaS voltada para gest&atilde;o comercial de empresas que utilizam WhatsApp Web e Gmail como canais de atendimento e vendas. O produto combina extens&atilde;o de navegador, intelig&ecirc;ncia artificial, CRM e integra&ccedil;&otilde;es para organizar leads, hist&oacute;rico, status, receita e follow-ups.</p>
+      <p>A SummFlux &eacute; uma plataforma SaaS de intelig&ecirc;ncia comercial para empresas que vendem por conversas. O produto pode combinar integra&ccedil;&atilde;o oficial do WhatsApp, an&aacute;lise assistida no WhatsApp Web e Gmail, intelig&ecirc;ncia artificial, CRM e integra&ccedil;&otilde;es externas para atender, qualificar e organizar oportunidades.</p>
 
       <h2>2. Dados que podemos coletar</h2>
       <p>Podemos coletar dados cadastrais da empresa contratante, dados de usu&aacute;rios autorizados, informa&ccedil;&otilde;es de acesso, logs t&eacute;cnicos, dados de configura&ccedil;&atilde;o, plano contratado, limites de uso e dados enviados voluntariamente por formul&aacute;rios de contato.</p>
-      <p>Quando a extens&atilde;o &eacute; utilizada, a empresa pode enviar trechos ou conte&uacute;dos da conversa ativa do WhatsApp Web ou da thread aberta no Gmail para que a IA gere resumo, qualifica&ccedil;&atilde;o, obje&ccedil;&otilde;es, pr&oacute;xima a&ccedil;&atilde;o recomendada, produto, valor estimado e demais informa&ccedil;&otilde;es comerciais necess&aacute;rias ao CRM.</p>
+      <p>Quando a integra&ccedil;&atilde;o oficial do WhatsApp est&aacute; habilitada, a SummFlux pode receber e armazenar mensagens, identificadores do canal, telefone, nome informado, status de entrega e eventos necess&aacute;rios para exibir a conversa, permitir respostas, qualificar oportunidades e manter o hist&oacute;rico comercial. No modo assistido, a empresa pode enviar o conte&uacute;do da conversa ativa do WhatsApp Web ou da thread aberta no Gmail para an&aacute;lise.</p>
 
       <h2>3. Finalidade do tratamento</h2>
       <p>Os dados s&atilde;o tratados para criar e manter contas, autenticar usu&aacute;rios, executar an&aacute;lises por IA, registrar leads, organizar o pipeline comercial, gerar insights de vendas, calcular indicadores, oferecer suporte, prevenir abuso, cumprir obriga&ccedil;&otilde;es legais e melhorar a seguran&ccedil;a da plataforma.</p>
 
       <h2>4. Acesso &agrave;s mensagens e an&aacute;lises</h2>
       <p>As mensagens e an&aacute;lises armazenadas no CRM pertencem &agrave; empresa contratante e ficam dispon&iacute;veis apenas para os usu&aacute;rios autorizados daquela conta empresarial, conforme permiss&otilde;es configuradas. Outros clientes da SummFlux ou empresas n&atilde;o relacionadas n&atilde;o t&ecirc;m acesso a esses dados.</p>
-      <p>A IA &eacute; utilizada para analisar somente o conte&uacute;do necess&aacute;rio e gerar informa&ccedil;&otilde;es comerciais. A SummFlux n&atilde;o transforma conversas de uma empresa em conte&uacute;do p&uacute;blico e n&atilde;o disponibiliza mensagens de uma empresa para outra.</p>
+      <p>A IA pode analisar o contexto necess&aacute;rio, gerar informa&ccedil;&otilde;es comerciais e, quando a automa&ccedil;&atilde;o estiver habilitada pela empresa, sugerir ou enviar respostas dentro das regras configuradas. A SummFlux n&atilde;o transforma conversas de uma empresa em conte&uacute;do p&uacute;blico e n&atilde;o disponibiliza mensagens de uma empresa para outra.</p>
 
       <h2>5. Compartilhamento com fornecedores</h2>
-      <p>Podemos utilizar provedores de infraestrutura, hospedagem, banco de dados, e-mail, monitoramento, pagamentos e intelig&ecirc;ncia artificial. Esses fornecedores recebem apenas os dados necess&aacute;rios para prestar os servi&ccedil;os contratados, observando medidas t&eacute;cnicas e contratuais adequadas de seguran&ccedil;a.</p>
+      <p>Podemos utilizar provedores de infraestrutura, hospedagem, banco de dados, e-mail, monitoramento, pagamentos, Meta/WhatsApp e intelig&ecirc;ncia artificial. Esses fornecedores recebem os dados necess&aacute;rios para executar suas respectivas fun&ccedil;&otilde;es, sujeitos a seus termos e a medidas t&eacute;cnicas e contratuais aplic&aacute;veis.</p>
 
       <h2>6. Base legal e LGPD</h2>
-      <p>O tratamento pode ocorrer com base na execu&ccedil;&atilde;o de contrato, leg&iacute;timo interesse, cumprimento de obriga&ccedil;&atilde;o legal, exerc&iacute;cio regular de direitos ou consentimento, conforme o caso. A empresa contratante deve garantir que possui base legal adequada para tratar e enviar &agrave; SummFlux as conversas e informa&ccedil;&otilde;es de seus clientes.</p>
+      <p>O tratamento pode ocorrer com base na execu&ccedil;&atilde;o de contrato, leg&iacute;timo interesse, cumprimento de obriga&ccedil;&atilde;o legal, exerc&iacute;cio regular de direitos ou consentimento, conforme o caso. Na opera&ccedil;&atilde;o comercial do cliente, a empresa contratante normalmente define as finalidades do tratamento e deve garantir a base legal e os avisos adequados; a SummFlux trata os dados para prestar o servi&ccedil;o contratado e cumprir obriga&ccedil;&otilde;es pr&oacute;prias.</p>
 
       <h2>7. Seguran&ccedil;a</h2>
-      <p>Adotamos controles t&eacute;cnicos e organizacionais compat&iacute;veis com a natureza do servi&ccedil;o, como autentica&ccedil;&atilde;o, segrega&ccedil;&atilde;o por empresa, controle de acesso, chaves de API, logs e boas pr&aacute;ticas de armazenamento. Nenhum sistema &eacute; absolutamente invulner&aacute;vel, mas o objetivo &eacute; reduzir riscos de acesso indevido, perda, altera&ccedil;&atilde;o ou divulga&ccedil;&atilde;o n&atilde;o autorizada.</p>
+      <p>Adotamos controles t&eacute;cnicos e organizacionais compat&iacute;veis com a natureza do servi&ccedil;o, como autentica&ccedil;&atilde;o, segrega&ccedil;&atilde;o por empresa, controle de acesso no backend, prote&ccedil;&atilde;o de credenciais de integra&ccedil;&atilde;o, valida&ccedil;&atilde;o de webhooks, logs e boas pr&aacute;ticas de armazenamento. Nenhum sistema &eacute; absolutamente invulner&aacute;vel, mas o objetivo &eacute; reduzir riscos de acesso indevido, perda, altera&ccedil;&atilde;o ou divulga&ccedil;&atilde;o n&atilde;o autorizada.</p>
 
       <h2>8. Reten&ccedil;&atilde;o e exclus&atilde;o</h2>
       <p>Os dados s&atilde;o mantidos enquanto forem necess&aacute;rios para presta&ccedil;&atilde;o do servi&ccedil;o, cumprimento de obriga&ccedil;&otilde;es legais, resolu&ccedil;&atilde;o de disputas, auditoria, seguran&ccedil;a e continuidade operacional. A empresa contratante poder&aacute; solicitar exclus&atilde;o ou exporta&ccedil;&atilde;o de dados, observadas limita&ccedil;&otilde;es legais, t&eacute;cnicas e contratuais.</p>
@@ -87,13 +89,13 @@
     </article>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-column">
+        <div class="footer-column footer-brand">
           <img class="footer-logo" src="assets/images/summflux-white.png" alt="SummFlux">
-          <p>IA comercial com CRM para empresas que vendem por WhatsApp e Gmail e precisam organizar leads, follow-ups, integra&ccedil;&otilde;es e receita.</p>
-          <div class="socials" aria-label="Redes sociais">
+          <p>IA comercial para atender, qualificar e organizar oportunidades no WhatsApp, Gmail e CRM, com mais contexto para vendedores e gestores.</p>
+          <div class="socials" role="group" aria-label="Redes sociais">
             <a class="social-link" href="https://www.instagram.com/summflux/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></svg></a>
             <a class="social-link" href="https://www.linkedin.com/company/summflux" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
             <a class="social-link" href="https://www.youtube.com/@SummFlux" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58Z"></path><path d="m10 15 5-3-5-3v6Z"></path></svg></a>
@@ -102,13 +104,12 @@
         </div>
 
         <div class="footer-column">
-          <h3>Produto</h3>
-          <a href="/#produto">Recursos</a>
+          <h3>Plataforma</h3>
           <a href="/#ary-ai">Ary AI</a>
-          <a href="/#demo">Demonstra&ccedil;&atilde;o</a>
+          <a href="/#demonstracao">Demonstra&ccedil;&atilde;o</a>
           <a href="/#como-funciona">Como funciona</a>
+          <a href="/#integracoes">Integra&ccedil;&otilde;es</a>
           <a href="/#planos">Planos</a>
-          <a href="tutorial-instalacao.html">Instala&ccedil;&atilde;o</a>
         </div>
 
         <div class="footer-column">
@@ -123,13 +124,14 @@
           <h3>Legal</h3>
           <a href="privacidade.html">Pol&iacute;tica de Privacidade</a>
           <a href="termos.html">Termos de Uso</a>
+          <a href="exclusao-dados.html">Exclus&atilde;o de dados</a>
           <a href="/#faq">FAQ</a>
         </div>
       </div>
 
       <div class="footer-bottom">
         <span>&copy; 2026 SummFlux. Todos os direitos reservados.</span>
-        <span>SummFlux &bull; IA comercial com CRM para WhatsApp, Gmail e integra&ccedil;&otilde;es.</span>
+        <span>IA comercial para WhatsApp, Gmail e CRM, com contexto para vendedores e gestores.</span>
       </div>
     </div>
   </footer>

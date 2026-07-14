@@ -3,25 +3,31 @@
 
   <url>
     <loc>https://www.summflux.com/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://www.summflux.com/tutorial-instalacao.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://www.summflux.com/termos.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://www.summflux.com/privacidade.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://www.summflux.com/exclusao-dados.html</loc>
+    <lastmod>2026-07-13</lastmod>
     <priority>0.2</priority>
   </url>
 
