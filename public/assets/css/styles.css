@@ -1780,3 +1780,8 @@
 }
 
 
+
+/* Mantém a área da demonstração estável enquanto as etapas automáticas alternam. */
+.demo-stage {
+  height: var(--demo-stage-height, auto);
+}

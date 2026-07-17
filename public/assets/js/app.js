@@ -11,13 +11,38 @@
     if (typeof window.gtag === 'function') window.gtag('event', name, params);
   }
 
+  let menuScrollY = 0;
+
+  function lockPageScroll() {
+    menuScrollY = window.scrollY;
+    document.body.classList.add('no-scroll');
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${menuScrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+  }
+
+  function unlockPageScroll() {
+    const restoreY = menuScrollY;
+    document.body.classList.remove('no-scroll');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    window.scrollTo({ top: restoreY, left: 0, behavior: 'auto' });
+  }
+
   function closeMenu() {
     if (!menuToggle || !navMenu) return;
+    const wasOpen = navMenu.classList.contains('active');
     menuToggle.classList.remove('active');
     navMenu.classList.remove('active');
+    header?.classList.remove('menu-open');
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.setAttribute('aria-label', 'Abrir menu');
-    document.body.classList.remove('no-scroll');
+    if (wasOpen) unlockPageScroll();
   }
 
   if (header) {
@@ -31,9 +56,15 @@
       const willOpen = !navMenu.classList.contains('active');
       menuToggle.classList.toggle('active', willOpen);
       navMenu.classList.toggle('active', willOpen);
+      header?.classList.toggle('menu-open', willOpen);
       menuToggle.setAttribute('aria-expanded', String(willOpen));
       menuToggle.setAttribute('aria-label', willOpen ? 'Fechar menu' : 'Abrir menu');
-      document.body.classList.toggle('no-scroll', willOpen);
+      if (willOpen) {
+        lockPageScroll();
+        requestAnimationFrame(() => navMenu.querySelector('a')?.focus({ preventScroll: true }));
+      } else {
+        unlockPageScroll();
+      }
     });
     navMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
     window.addEventListener('resize', () => { if (window.innerWidth > 980) closeMenu(); });
@@ -64,6 +95,33 @@
     const order = controls.map((button) => button.dataset.demoControl);
     let activeIndex = 0;
     let timer = null;
+    let resizeTimer = null;
+
+    function syncDemoStageHeight() {
+      const activeStage = stages.find((stage) => !stage.hidden) || stages[0];
+      const measuredWidth = activeStage?.getBoundingClientRect().width || Math.max(productDemo.clientWidth - 18, 280);
+      let maxHeight = 0;
+
+      stages.forEach((stage) => {
+        const wasHidden = stage.hidden;
+        const originalStyle = stage.getAttribute('style');
+        stage.hidden = false;
+        stage.style.position = 'absolute';
+        stage.style.visibility = 'hidden';
+        stage.style.pointerEvents = 'none';
+        stage.style.width = `${measuredWidth}px`;
+        stage.style.height = 'auto';
+        stage.style.minHeight = '0';
+        maxHeight = Math.max(maxHeight, stage.scrollHeight);
+        if (originalStyle === null) stage.removeAttribute('style');
+        else stage.setAttribute('style', originalStyle);
+        stage.hidden = wasHidden;
+      });
+
+      if (maxHeight > 0) {
+        productDemo.style.setProperty('--demo-stage-height', `${Math.ceil(maxHeight)}px`);
+      }
+    }
 
     function showStage(name, source = 'auto') {
       const nextIndex = Math.max(order.indexOf(name), 0);
@@ -97,7 +155,14 @@
     productDemo.addEventListener('mouseenter', () => window.clearInterval(timer));
     productDemo.addEventListener('mouseleave', startDemo);
     document.addEventListener('visibilitychange', startDemo);
+    window.addEventListener('resize', () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(syncDemoStageHeight, 120);
+    });
     showStage(order[0]);
+    requestAnimationFrame(syncDemoStageHeight);
+    if (document.fonts?.ready) document.fonts.ready.then(syncDemoStageHeight).catch(() => {});
+    window.addEventListener('load', syncDemoStageHeight, { once: true });
     startDemo();
   }
 

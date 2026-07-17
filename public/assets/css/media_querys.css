@@ -513,3 +513,41 @@
   }
 }
 
+
+/* Navegação móvel ancorada à viewport, sem perder a posição atual da página. */
+@media (max-width: 980px) {
+  .site-header.menu-open {
+    position: fixed;
+    inset: 0 0 auto 0;
+    width: 100%;
+    background: #fff;
+    backdrop-filter: none;
+  }
+
+  .nav-menu {
+    z-index: 1001;
+    inset: 68px 0 0;
+    align-content: start;
+    max-height: calc(100dvh - 68px);
+    padding: 16px max(14px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
+    overflow-y: auto;
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    background: rgba(255, 255, 255, .99);
+    box-shadow: none;
+    overscroll-behavior: contain;
+  }
+
+  .nav-menu>a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .demo-stage {
+    min-height: 535px;
+  }
+}

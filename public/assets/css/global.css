@@ -302,3 +302,8 @@ textarea:focus-visible {
   }
 }
 
+
+body.no-scroll {
+  overscroll-behavior: none;
+  touch-action: none;
+}
