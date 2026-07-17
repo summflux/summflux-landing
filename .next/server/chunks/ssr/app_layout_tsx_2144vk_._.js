@@ -1,0 +1,3 @@
+module.exports=[33290,a=>{"use strict";var b=a.i(7997);let c={metadataBase:new URL(process.env.NEXT_PUBLIC_SITE_URL||"https://www.summflux.com"),title:{default:"SummFlux | Inteligência comercial com Ary AI",template:"%s | SummFlux"},description:"Inteligência comercial para WhatsApp, Gmail e CRM.",icons:{icon:"/assets/icons/st-logo.png",apple:"/assets/icons/st-logo.png"},openGraph:{siteName:"SummFlux",locale:"pt_BR",type:"website"},robots:{index:!0,follow:!0}};a.s(["default",0,function({children:a}){return(0,b.jsx)("html",{lang:"pt-BR",children:(0,b.jsx)("body",{children:a})})},"metadata",0,c])},70864,a=>{a.n(a.i(33290))}];
+
+//# sourceMappingURL=app_layout_tsx_2144vk_._.js.map

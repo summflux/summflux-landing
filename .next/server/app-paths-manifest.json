@@ -1,0 +1,12 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/revalidate/route": "app/api/revalidate/route.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/blog/preview/page": "app/blog/preview/page.js",
+  "/page": "app/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/rss.xml/route": "app/rss.xml/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js"
+}

@@ -1,0 +1,3 @@
+module.exports=[71029,(a,b,c)=>{"use strict";c._=function(a){return a&&a.__esModule?a:{default:a}}},66188,a=>{"use strict";var b=a.i(7997),c=a.i(95936),d=a.i(76254);a.s(["default",0,function(){return(0,b.jsxs)("div",{className:"blog-body",children:[(0,b.jsx)(d.PublicHeader,{}),(0,b.jsxs)("main",{className:"blog-empty-public",style:{margin:"80px auto",maxWidth:720},children:[(0,b.jsx)("h1",{children:"Página não encontrada"}),(0,b.jsx)("p",{children:"O conteúdo pode ter sido removido ou o endereço está incorreto."}),(0,b.jsx)(c.default,{href:"/blog",children:"Voltar ao blog"})]})]})}])},2894,a=>{a.n(a.i(66188))}];
+
+//# sourceMappingURL=_09jtnar._.js.map

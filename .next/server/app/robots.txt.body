@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /blog/preview
+
+Host: https://www.summflux.com
+Sitemap: https://www.summflux.com/sitemap.xml

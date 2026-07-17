@@ -1,0 +1,12 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/revalidate/route": "/api/revalidate",
+  "/blog/[slug]/page": "/blog/[slug]",
+  "/blog/page": "/blog",
+  "/blog/preview/page": "/blog/preview",
+  "/page": "/",
+  "/robots.txt/route": "/robots.txt",
+  "/rss.xml/route": "/rss.xml",
+  "/sitemap.xml/route": "/sitemap.xml"
+}
