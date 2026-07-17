@@ -1,0 +1,3 @@
+import type { MetadataRoute } from "next";
+import { getBlogPosts } from "../lib/blog-api";
+export default async function sitemap():Promise<MetadataRoute.Sitemap>{const site=process.env.NEXT_PUBLIC_SITE_URL||"https://www.summflux.com";let posts=[] as Awaited<ReturnType<typeof getBlogPosts>>["data"];try{posts=(await getBlogPosts({limit:24})).data;}catch{}return [{url:site,lastModified:new Date(),changeFrequency:"weekly",priority:1},{url:`${site}/blog`,lastModified:new Date(),changeFrequency:"daily",priority:.8},...posts.filter((post)=>!post.noindex).map((post)=>({url:`${site}/blog/${post.slug}`,lastModified:new Date(post.updated_at),changeFrequency:"monthly" as const,priority:.7}))];}

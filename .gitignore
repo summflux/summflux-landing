@@ -1,1 +1,126 @@
-.vercel
+# =========================================================
+# DEPENDÊNCIAS
+# =========================================================
+
+node_modules/
+.pnp/
+.pnp.*
+
+# Configurações locais de gerenciadores de pacotes.
+# O package-lock.json NÃO deve ser ignorado.
+.npmrc
+.yarnrc
+.yarnrc.yml
+
+
+# =========================================================
+# NEXT.JS E ARQUIVOS DE BUILD
+# =========================================================
+
+.next/
+out/
+build/
+dist/
+
+
+# =========================================================
+# VERCEL
+# =========================================================
+
+# Contém identificação local do projeto conectado à Vercel.
+# O vercel.json continua versionado normalmente.
+.vercel/
+
+
+# =========================================================
+# VARIÁVEIS DE AMBIENTE E SEGREDOS
+# =========================================================
+
+.env
+.env.*
+
+# Este arquivo pode e deve continuar no GitHub,
+# desde que contenha somente exemplos e valores vazios.
+!.env.example
+
+
+# =========================================================
+# LOGS
+# =========================================================
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# =========================================================
+# TESTES E COBERTURA
+# =========================================================
+
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+
+
+# =========================================================
+# CACHES DE FERRAMENTAS
+# =========================================================
+
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+.turbo/
+.cache/
+.swc/
+
+
+# =========================================================
+# EDITORES E SISTEMA OPERACIONAL
+# =========================================================
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+.vscode/
+.idea/
+
+*.swp
+*.swo
+*~
+
+
+# =========================================================
+# CERTIFICADOS, CHAVES E ARQUIVOS SENSÍVEIS
+# =========================================================
+
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+/secrets/
+/private/
+
+
+# =========================================================
+# DADOS E ARQUIVOS LOCAIS
+# =========================================================
+
+*.sqlite
+*.sqlite3
+*.db
+
+/tmp/
+/temp/
+/uploads/
+
+*.tmp
+*.bak
+*.backup
+*.orig
