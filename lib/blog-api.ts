@@ -1,4 +1,11 @@
 export type BlogTag = { id: number; name: string; slug: string };
+
+export type BlogSitemapEntry = {
+  slug: string;
+  published_at: string;
+  updated_at: string;
+};
+
 export type BlogPost = {
   id: number;
   title: string;
@@ -22,7 +29,10 @@ export type BlogPost = {
   updated_at: string;
 };
 
-const API_BASE = (process.env.BLOG_API_BASE_URL || "http://localhost:3000/api/public/blog").replace(/\/+$/, "");
+const DEFAULT_API_BASE = process.env.NODE_ENV === "production"
+  ? "https://api.summflux.com/api/public/blog"
+  : "http://localhost:3000/api/public/blog";
+const API_BASE = (process.env.BLOG_API_BASE_URL || DEFAULT_API_BASE).replace(/\/+$/, "");
 
 async function apiFetch<T>(path: string, options: RequestInit & { next?: { tags?: string[]; revalidate?: number } } = {}): Promise<T> {
   const response = await fetch(`${API_BASE}${path}`, options);
@@ -56,4 +66,12 @@ export async function getBlogCategories() {
 
 export async function getPreviewPost(token: string) {
   return apiFetch<{ ok: true; data: BlogPost }>(`/preview/${encodeURIComponent(token)}`, { cache: "no-store" });
+}
+
+
+export async function getBlogSitemapEntries() {
+  return apiFetch<BlogSitemapEntry[]>("/sitemap", {
+    cache: "force-cache",
+    next: { tags: ["blog-posts", "blog-sitemap"], revalidate: 3600 }
+  });
 }

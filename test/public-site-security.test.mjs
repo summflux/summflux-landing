@@ -7,10 +7,10 @@ const read = (path) => readFile(new URL(path, import.meta.url), "utf8");
 test("revalidação do Next valida HMAC, janela temporal e replay", async () => {
   const source = await read("../app/api/revalidate/route.ts");
   assert.match(source, /timingSafeEqual/);
-  assert.match(source, /createHmac\("sha256",secret\)/);
+  assert.match(source, /createHmac\("sha256",\s*secret\)/);
   assert.match(source, /seenNonces\.has\(nonce\)/);
-  assert.match(source, /5\*60_000/);
-  assert.match(source, /revalidateTag\("blog-posts","max"\)/);
+  assert.match(source, /5\s*\*\s*60_000/);
+  assert.match(source, /revalidateTag\("blog-posts",\s*"max"\)/);
   assert.doesNotMatch(source, /searchParams.*secret/);
 });
 
