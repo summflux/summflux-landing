@@ -54,8 +54,9 @@ test("sitemap usa endpoint leve, cache etiquetado e preserva estáticos em falha
   assert.match(api, /tags: \["blog-posts", "blog-sitemap"\]/);
   assert.match(api, /revalidate: 3600/);
   assert.match(sitemap, /catch \(error\)/);
-  assert.match(sitemap, /Gerado sem artigos/);
-  assert.doesNotMatch(sitemap, /priority|changeFrequency|new Date\(\)/);
+  assert.match(sitemap, /blog\.sitemap_api_unavailable/);
+  assert.match(sitemap, /let articles:[\s\S]*= \[\]/);
+  assert.doesNotMatch(sitemap, /priority|changeFrequency|lastModified:\s*new Date/);
 });
 
 test("revalidação invalida blog, artigo, slug antigo, sitemap e tags compartilhadas", async () => {

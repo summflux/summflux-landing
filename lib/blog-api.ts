@@ -65,6 +65,7 @@ export async function getBlogCategories() {
 }
 
 export async function getPreviewPost(token: string) {
+  if (!token || token.length > 2_048) throw new Error("BLOG_PREVIEW_TOKEN_INVALID");
   return apiFetch<{ ok: true; data: BlogPost }>(`/preview/${encodeURIComponent(token)}`, { cache: "no-store" });
 }
 
