@@ -82,10 +82,10 @@ test("robots referencia o sitemap canônico e não bloqueia o blog", async () =>
   assert.match(robots, /disallow: \["\/admin", "\/api", "\/preview", "\/blog\/preview"\]/);
 });
 
-test("XML estático antigo foi preservado temporariamente fora da pasta public e possui backup", async () => {
+test("sitemap dinâmico substitui o XML público sem exigir arquivos de backup no deploy", async () => {
   await access(new URL("../sitemap.xml", import.meta.url));
   await assert.rejects(access(new URL("../public/sitemap.xml", import.meta.url)));
-  await access(new URL("../_backups/sitemap-static-before-dynamic-2026-07-13.xml", import.meta.url));
+  await access(new URL("../app/sitemap.ts", import.meta.url));
 });
 
 
