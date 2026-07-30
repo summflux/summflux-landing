@@ -2,22 +2,32 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
-const layout = await readFile(new URL("../app/layout.tsx", import.meta.url), "utf8");
+const read = (path) => readFile(new URL(path, import.meta.url), "utf8");
+const landingSources = await Promise.all([
+  read("../app/page.tsx"),
+  read("../components/landing/HeroSection.tsx"),
+  read("../components/landing/ProductDemo.tsx"),
+  read("../components/landing/PromiseToCashSection.tsx"),
+  read("../components/landing/ArySection.tsx"),
+  read("../components/landing/GuardRealitySection.tsx"),
+]);
+const landing = landingSources.join("\n");
+const layout = await read("../app/layout.tsx");
 
 test("landing posiciona a SummFlux como RealityOS sem apagar a Ary", () => {
-  assert.match(page, /RealityOS para operações comerciais/);
-  assert.match(page, /conversas, promessas, execução e pagamento/);
-  assert.match(page, /Promise-to-Cash/);
-  assert.match(page, /Guard para decisões/);
-  assert.match(page, /Action Center/);
-  assert.match(page, /RealityOS \+ Ary/);
+  assert.match(landing, /RealityOS para operações comerciais/);
+  assert.match(landing, /conversa e pagamento/);
+  assert.match(landing, /Promise-to-Cash/);
+  assert.match(landing, /Guard/);
+  assert.match(landing, /Action Center/);
+  assert.match(landing, /RealityOS \+ Ary/);
   assert.match(layout, /SummFlux RealityOS/);
   assert.match(layout, /Ary AI/);
 });
 
 test("mensagem pública não promete previsão absoluta ou automação sem controle", () => {
-  assert.doesNotMatch(page, /garantia de resultado|100% automático|sem intervenção humana/i);
-  assert.match(page, /aprovação humana rastreável/);
-  assert.match(page, /Evidências rastreáveis/);
+  assert.doesNotMatch(landing, /garantia de resultado|100% automático|sem intervenção humana/i);
+  assert.match(landing, /aprovação humana rastreável/i);
+  assert.match(landing, /Evidências rastreáveis/);
+  assert.match(landing, /não inventa preço, prazo/);
 });

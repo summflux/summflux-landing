@@ -36,10 +36,12 @@ test("artigo entrega metadata, canonical, JSON-LD e HTML sanitizado pelo backend
   assert.match(article, /replace\(\/<\//);
 });
 
-test("landing preservada inclui acesso ao blog no domínio principal", async () => {
-  const landing = await read("../lib/landing-html.ts");
-  assert.match(landing, /href="\/blog"/);
-  assert.match(landing, /SummFlux/);
+test("landing componentizada inclui acesso ao blog no domínio principal", async () => {
+  const header = await read("../components/PublicHeader.tsx");
+  const page = await read("../app/page.tsx");
+  assert.match(header, /href="\/blog"/);
+  assert.match(header, /SummFlux/);
+  assert.doesNotMatch(page, /dangerouslySetInnerHTML|landingHtml/);
 });
 
 test("produção entrega CSP, HSTS e proteção contra framing", async () => {

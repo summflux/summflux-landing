@@ -4,28 +4,34 @@ import { readFile } from "node:fs/promises";
 
 const read = (path) => readFile(new URL(path, import.meta.url), "utf8");
 
-test("menu móvel preserva scroll e fica ancorado à viewport", async () => {
-  const script = await read("../public/assets/js/app.js");
+test("menu móvel é controlado, acessível e bloqueia o scroll de fundo", async () => {
+  const header = await read("../components/PublicHeader.tsx");
   const css = await read("../app/globals.css");
-  const html = await read("../lib/landing-html.ts");
 
-  assert.match(script, /menuScrollY = window\.scrollY/);
-  assert.match(script, /document\.body\.style\.position = 'fixed'/);
-  assert.match(script, /window\.scrollTo\(\{ top: restoreY/);
-  assert.match(script, /header\?\.classList\.toggle\('menu-open'/);
-  assert.match(css, /\.site-header\.menu-open/);
-  assert.match(css, /max-height: calc\(100dvh - 68px\)/);
-  assert.match(html, /aria-controls="site-navigation"/);
-  assert.match(html, /id="site-navigation"/);
+  assert.match(header, /aria-expanded=\{open\}/);
+  assert.match(header, /aria-controls=\{navigationId\}/);
+  assert.match(header, /event\.key === "Escape"/);
+  assert.match(header, /event\.key !== "Tab"/);
+  assert.match(header, /previousFocusRef\.current\?\.focus\(\)/);
+  assert.match(header, /navigationRef\.current\?\.querySelector/);
+  assert.match(header, /document\.body\.style\.overflow = "hidden"/);
+  assert.match(header, /previousOverflow/);
+  assert.match(header, /className="site-menu-backdrop"/);
+  assert.match(css, /max-height: calc\(100dvh - 66px\)/);
+  assert.match(css, /\.site-header\.is-open \.site-navigation/);
+  assert.match(css, /\.site-menu-backdrop\s*\{[\s\S]*position: fixed/);
 });
 
-test("demonstração reserva a maior altura e evita salto automático", async () => {
-  const script = await read("../public/assets/js/app.js");
+test("landing não injeta HTML e as áreas responsivas usam limites fluidos", async () => {
+  const page = await read("../app/page.tsx");
+  const demo = await read("../components/landing/ProductDemo.tsx");
   const css = await read("../app/globals.css");
 
-  assert.match(script, /function syncDemoStageHeight\(\)/);
-  assert.match(script, /maxHeight = Math\.max\(maxHeight, stage\.scrollHeight\)/);
-  assert.match(script, /--demo-stage-height/);
-  assert.match(css, /height: var\(--demo-stage-height, auto\)/);
-  assert.match(css, /min-height: 535px/);
+  assert.doesNotMatch(page, /dangerouslySetInnerHTML|landingHtml|<Script/);
+  assert.match(page, /<ProductDemo \/>/);
+  assert.match(demo, /role="tablist"/);
+  assert.match(demo, /aria-selected=\{activeView === key\}/);
+  assert.match(css, /width: min\(calc\(100% - 24px\), var\(--container\)\)/);
+  assert.match(css, /overflow: clip/);
+  assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
 });
